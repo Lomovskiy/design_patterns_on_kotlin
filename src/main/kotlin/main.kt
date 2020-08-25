@@ -1,13 +1,10 @@
 fun main() {
 
-    val order = Order(AssignedState())
-    order.handleInput(InputType.PressAddPhotoButton)
-    order.handleInput(InputType.PressStartWorkButton)
-    order.handleInput(InputType.PressAddPhotoButton)
-    order.handleInput(InputType.PressPostponeButton)
-    order.handleInput(InputType.PressAddPhotoButton)
-    order.handleInput(InputType.PressAddPhotoButton)
-    order.handleInput(InputType.PressEndWorkButton)
-    order.handleInput(InputType.PressStartWorkButton)
+    val navigator = Navigator(HikingStrategy)
+    navigator.buildRoute(1.0, 2.0)
+    navigator.setStrategy(CarStrategy)
+    navigator.buildRoute(3.0, 4.0)
+    navigator.setStrategy(PublicTransportStrategy)
+    navigator.buildRoute(5.0, 6.0)
 
 }
