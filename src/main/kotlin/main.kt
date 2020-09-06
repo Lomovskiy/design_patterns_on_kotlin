@@ -1,15 +1,12 @@
 fun main() {
 
-    val figures: ArrayList<Figure> = ArrayList(3)
-    figures.add(Triangle())
-    figures.add(Circle())
-    figures.add(Rectangle())
-
-    val colorDrawer = ColorDrawer()
-    val blackWhiteDrawer = BlackWhiteDrawer()
-
-    figures.forEach { figure: Figure ->
-        figure.accept(blackWhiteDrawer)
-    }
+    val invoker = Invoker()
+    val receiver: Receiver = ReceiverImpl()
+    var command: Command = Forward(receiver)
+    invoker.setCommand(command)
+    invoker.run()
+    command = Back(receiver)
+    invoker.setCommand(command)
+    invoker.run()
 
 }
