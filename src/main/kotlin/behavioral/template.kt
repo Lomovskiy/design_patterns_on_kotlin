@@ -1,3 +1,5 @@
+package behavioral
+
 abstract class Sportsman {
 
     abstract fun warmUp()

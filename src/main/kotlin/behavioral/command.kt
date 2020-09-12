@@ -1,3 +1,5 @@
+package behavioral
+
 interface Command {
     fun execute()
 }

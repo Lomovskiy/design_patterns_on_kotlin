@@ -1,3 +1,5 @@
+package behavioral
+
 interface Drawer {
 
     fun draw(figure: Figure)

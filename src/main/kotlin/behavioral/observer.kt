@@ -1,3 +1,5 @@
+package behavioral
+
 typealias LocationListener = (latitude: Double, longitude: Double) -> Unit
 
 interface LocationProvider {

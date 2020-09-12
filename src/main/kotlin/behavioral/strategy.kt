@@ -1,3 +1,5 @@
+package behavioral
+
 interface Strategy {
 
     fun buildRoute(startPoint: Double, endPoint: Double)

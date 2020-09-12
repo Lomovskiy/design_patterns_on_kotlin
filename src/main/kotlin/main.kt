@@ -1,12 +1,27 @@
+import behavioral.*
+import creational.*
+
 fun main() {
 
-    val invoker = Invoker()
-    val receiver: Receiver = ReceiverImpl()
-    var command: Command = Forward(receiver)
-    invoker.setCommand(command)
-    invoker.run()
-    command = Back(receiver)
-    invoker.setCommand(command)
-    invoker.run()
+    var uiFactory: UiFactory = IOSUIFactory()
+
+    var button: Button = uiFactory.getButton()
+    var checkBox: CheckBox = uiFactory.getCheckBox()
+    var textField: TextField = uiFactory.getTextField()
+
+    println(button)
+    println(checkBox)
+    println(textField)
+    println("--------------")
+
+    uiFactory = AndroidUiFactory()
+
+    button = uiFactory.getButton()
+    checkBox = uiFactory.getCheckBox()
+    textField = uiFactory.getTextField()
+
+    println(button)
+    println(checkBox)
+    println(textField)
 
 }

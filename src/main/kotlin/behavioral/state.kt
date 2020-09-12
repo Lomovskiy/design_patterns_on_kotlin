@@ -1,3 +1,5 @@
+package behavioral
+
 class Order(private var currentState: State) {
 
     fun changeState(state: State) {
