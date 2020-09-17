@@ -1,27 +1,16 @@
-import behavioral.*
-import creational.*
+import behavioral.System
 
+// Caretaker
 fun main() {
 
-    var uiFactory: UiFactory = IOSUIFactory()
+    val states = mutableListOf<System.Momento>()
 
-    var button: Button = uiFactory.getButton()
-    var checkBox: CheckBox = uiFactory.getCheckBox()
-    var textField: TextField = uiFactory.getTextField()
+    val system = System("1")
 
-    println(button)
-    println(checkBox)
-    println(textField)
-    println("--------------")
+    states.add(system.set("2"))
+    states.add(system.set("3"))
+    states.add(system.set("4"))
 
-    uiFactory = AndroidUiFactory()
-
-    button = uiFactory.getButton()
-    checkBox = uiFactory.getCheckBox()
-    textField = uiFactory.getTextField()
-
-    println(button)
-    println(checkBox)
-    println(textField)
+    system.restore(states.first())
 
 }
