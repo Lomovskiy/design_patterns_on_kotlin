@@ -1,11 +1,19 @@
-import behavioral.*
+import behavioral.mediator.Component
+import behavioral.mediator.Component1
+import behavioral.mediator.Component2
+import behavioral.mediator.Component3
+import behavioral.mediator.PrintMediator
 
-// Caretaker
 fun main() {
 
-    val dialogWindow = DialogWindow()
-    val button = Button(dialogWindow)
+    val components: List<Component> = listOf(
+            Component1(PrintMediator),
+            Component2(PrintMediator),
+            Component3(PrintMediator)
+    )
 
-    button.handleClick(ClickEvent(ClickType.LONG))
+    components.forEach { component: Component ->
+        component.doSmt()
+    }
 
 }
